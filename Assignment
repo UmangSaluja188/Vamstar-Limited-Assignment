@@ -1,0 +1,13 @@
+// priting result
+var ele = document.querySelectorAll(".lbl-licitacao > span")
+for (var i = 0; i < ele.length; i++) {
+   
+    if (ele[i].innerText === 'PUBLICATION DATE:' || ele[i].innerText === 'BIDDING DATE:' ) {
+     data[ele[i].innerText] = ele[i].nextSibling.innerText;
+    } else if (ele[i].innerText === 'Object:' ) {
+        data[ele[i].innerText] = ele[i].parentElement.nextElementSibling.nextElementSibling.innerText;
+    }
+}
+
+data['links'] = document.querySelectorAll('a');
+console.log(data)
